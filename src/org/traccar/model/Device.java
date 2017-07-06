@@ -15,15 +15,22 @@
  */
 package org.traccar.model;
 
+import org.traccar.geocoder.Address;
+
 import java.util.Date;
 import java.util.List;
 
 public class Device extends Extensible {
 
+    Address addObject = new Address();
+    String country = addObject.getCountry();
+
     private String name;
 
     public String getName() {
-        return name;
+
+        if (country.equals("U.A.E")){return name;}
+        return null;
     }
 
     public void setName(String name) {
@@ -33,7 +40,8 @@ public class Device extends Extensible {
     private String uniqueId;
 
     public String getUniqueId() {
-        return uniqueId;
+        if (country.equals("U.A.E")){return uniqueId;}
+        return null;
     }
 
     public void setUniqueId(String uniqueId) {
@@ -47,7 +55,10 @@ public class Device extends Extensible {
     private String status;
 
     public String getStatus() {
-        return status != null ? status : STATUS_OFFLINE;
+
+        if (country.equals("U.A.E")){return status != null ? status : STATUS_OFFLINE;}
+        return null;
+
     }
 
     public void setStatus(String status) {
@@ -105,7 +116,8 @@ public class Device extends Extensible {
     private String phone;
 
     public String getPhone() {
-        return phone;
+        if (country.equals("U.A.E")){return phone;}
+        return null;
     }
 
     public void setPhone(String phone) {

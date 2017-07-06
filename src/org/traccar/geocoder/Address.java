@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.traccar.geocoder;
 
 public class Address {
@@ -27,7 +28,7 @@ public class Address {
         this.postcode = postcode;
     }
 
-    private String country;
+    public String country;
 
     public String getCountry() {
         return country;
